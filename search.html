@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Books | The Free Book Nook</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-left" aria-label="Primary navigation">
+        <a href="search.html">Search Books</a>
+        <a href="index.html#about">About Us</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="The Free Book Nook home">
+        <img src="assets/book-logo.png" alt="" class="brand-logo" />
+        <span>The Free Book Nook</span>
+      </a>
+
+      <nav class="nav-right" aria-label="Account navigation">
+        <a href="index.html#donate">Donate</a>
+        <a href="index.html#signin">Login/Sign up</a>
+      </nav>
+    </header>
+
+    <main class="search-page">
+      <section class="search-card" aria-labelledby="search-title">
+        <h1 id="search-title">Search</h1>
+        <p>
+          Look for novels, manga, cookbooks, academic papers, and other digital
+          books
+        </p>
+
+        <form class="book-search-form">
+          <label for="book-search">Book title, author, ISBN, or DOI</label>
+          <div class="search-row">
+            <input
+              id="book-search"
+              name="query"
+              type="search"
+              placeholder="🔍 Search..."
+            />
+            <button type="submit">Search</button>
+          </div>
+
+          <fieldset class="search-filters">
+            <legend>Filter by</legend>
+            <label>
+              <input type="checkbox" name="format" value="novels" />
+              <span>Novels</span>
+            </label>
+            <label>
+              <input type="checkbox" name="format" value="manga" />
+              <span>Manga</span>
+            </label>
+            <label>
+              <input type="checkbox" name="format" value="cookbooks" />
+              <span>Cookbooks</span>
+            </label>
+            <label>
+              <input type="checkbox" name="format" value="academic" />
+              <span>Academic papers</span>
+            </label>
+          </fieldset>
+        </form>
+
+        <div class="recent-searches" aria-labelledby="recent-searches-title">
+          <h2 id="recent-searches-title">Recent Searches</h2>
+          <div class="recent-search-list">
+            <span class="recent-search-chip">
+              <button class="recent-search-term" type="button">
+                Pride and Prejudice
+              </button>
+              <button
+                class="recent-search-delete"
+                type="button"
+                aria-label="Delete Pride and Prejudice from recent searches"
+              >
+                &times;
+              </button>
+            </span>
+            <span class="recent-search-chip">
+              <button class="recent-search-term" type="button">Manga</button>
+              <button
+                class="recent-search-delete"
+                type="button"
+                aria-label="Delete Manga from recent searches"
+              >
+                &times;
+              </button>
+            </span>
+            <span class="recent-search-chip">
+              <button class="recent-search-term" type="button">
+                Climate research
+              </button>
+              <button
+                class="recent-search-delete"
+                type="button"
+                aria-label="Delete Climate research from recent searches"
+              >
+                &times;
+              </button>
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
