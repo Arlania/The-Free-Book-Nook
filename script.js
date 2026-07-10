@@ -112,4 +112,10 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
+document.querySelectorAll(".recent-search-delete").forEach((button) => {
+  button.addEventListener("click", () => {
+    button.closest(".recent-search-chip")?.remove();
+  });
+});
+
 updateUserState();
