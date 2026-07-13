@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collections | The Free Book Nook</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-left" aria-label="Primary navigation">
+        <a href="search.html">Search Books</a>
+        <a href="index.html#about">About Us</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="The Free Book Nook home">
+        <img src="assets/book-logo.png" alt="" class="brand-logo" />
+        <span>The Free Book Nook</span>
+      </a>
+
+      <nav class="nav-right" aria-label="Account navigation">
+        <a href="index.html#donate">Donate</a>
+        <a
+          href="index.html#signin"
+          data-modal-open="signin-modal"
+          class="login-link"
+        >
+          Login/Sign up
+        </a>
+        <div class="user-menu" hidden>
+          <button
+            class="user-button"
+            type="button"
+            aria-label="User account menu"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <span class="user-icon" aria-hidden="true"></span>
+            <span class="user-name">TheFreeBookNook</span>
+          </button>
+          <div class="account-dropdown" role="menu">
+            <a href="#starred" role="menuitem">Starred</a>
+            <a href="collections.html" role="menuitem">Collections</a>
+            <a href="#creator-access" role="menuitem">Creator Access</a>
+            <a href="#contact" role="menuitem">Contact Us</a>
+            <button class="logout-button" type="button" role="menuitem">
+              Sign Out
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="collections-page">
+      <section class="collections-hero" aria-labelledby="collections-title">
+        <h1 id="collections-title">
+          <span class="page-user-name">TheFreeBookNook</span>
+        </h1>
+      </section>
+
+      <section class="collections-content" aria-labelledby="my-collections">
+        <h2 id="my-collections">My collections</h2>
+
+        <div class="collections-grid">
+          <article class="collection-card">
+            <div class="collection-cover" aria-hidden="true"></div>
+            <h3>Collection 1</h3>
+          </article>
+
+          <button class="create-collection-card" type="button">
+            <span>Create new</span>
+            <strong aria-hidden="true">+</strong>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

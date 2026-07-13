@@ -5,6 +5,9 @@ const signInForm = signInModal?.querySelector(".signin-form");
 const signInMessage = signInModal?.querySelector(".signin-message");
 const loginLink = document.querySelector(".login-link");
 const userMenu = document.querySelector(".user-menu");
+const userButton = document.querySelector(".user-button");
+const userName = document.querySelector(".user-name");
+const pageUserName = document.querySelector(".page-user-name");
 const logoutButton = document.querySelector(".logout-button");
 const demoAccount = {
   email: "TheFreeBookNook",
@@ -20,6 +23,14 @@ function updateUserState() {
 
   if (userMenu) {
     userMenu.hidden = !loggedIn;
+  }
+
+  if (loggedIn && userName) {
+    userName.textContent = demoAccount.email;
+  }
+
+  if (pageUserName) {
+    pageUserName.textContent = loggedIn ? demoAccount.email : "Guest";
   }
 }
 
@@ -80,7 +91,14 @@ signInForm?.addEventListener("submit", (event) => {
 
 logoutButton?.addEventListener("click", () => {
   localStorage.removeItem("freeBookNookUser");
+  userMenu?.classList.remove("is-open");
+  userButton?.setAttribute("aria-expanded", "false");
   updateUserState();
+});
+
+userButton?.addEventListener("click", () => {
+  const isOpen = userMenu?.classList.toggle("is-open") || false;
+  userButton.setAttribute("aria-expanded", String(isOpen));
 });
 
 signInModal?.addEventListener("click", (event) => {
@@ -92,6 +110,15 @@ signInModal?.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     setSignInModal(false);
+    userMenu?.classList.remove("is-open");
+    userButton?.setAttribute("aria-expanded", "false");
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (!userMenu?.contains(event.target)) {
+    userMenu?.classList.remove("is-open");
+    userButton?.setAttribute("aria-expanded", "false");
   }
 });
 
