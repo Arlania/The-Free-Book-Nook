@@ -838,14 +838,26 @@ body {
 
 .collection-card {
   margin: 0;
+  cursor: pointer;
   text-align: center;
 }
 
 .collection-cover {
   width: 174px;
   height: 252px;
-  background: var(--ink);
+  margin: 0 auto;
+  border-radius: 8px 8px 4px 4px;
+  background:
+    linear-gradient(90deg, rgba(255, 250, 240, 0.12) 0 12px, transparent 12px),
+    linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
   box-shadow: 0 16px 32px rgba(16, 11, 43, 0.14);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.collection-card:hover .collection-cover,
+.collection-card:focus-visible .collection-cover {
+  box-shadow: 0 20px 38px rgba(16, 11, 43, 0.2);
+  transform: translateY(-3px);
 }
 
 .collection-card h3 {
@@ -853,6 +865,12 @@ body {
   color: var(--ink);
   font-size: 1rem;
   line-height: 1.2;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.collection-card h3:hover {
+  text-decoration: underline;
 }
 
 .create-collection-card {
@@ -884,6 +902,130 @@ body {
 .create-collection-card:hover,
 .create-collection-card:focus-visible {
   background: var(--ink);
+}
+
+.collection-detail-hero {
+  display: grid;
+  align-content: center;
+  gap: 16px;
+}
+
+.collection-detail-hero h1 {
+  width: fit-content;
+  cursor: text;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 10px;
+}
+
+.collection-detail-hero h1:hover {
+  text-decoration: underline;
+}
+
+.collection-title-hint {
+  margin: -6px 0 0;
+  color: #8a857f;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.back-link {
+  width: fit-content;
+  color: #f2d6a4;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  text-decoration: underline;
+}
+
+.bookshelf-section {
+  padding: clamp(42px, 6vw, 76px) clamp(28px, 7vw, 96px)
+    clamp(78px, 8vw, 120px);
+}
+
+.bookshelf-section h2 {
+  margin: 0 0 28px;
+  color: var(--ink);
+  font-size: clamp(1.65rem, 2.6vw, 2.35rem);
+  line-height: 1.1;
+}
+
+.bookshelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 180px));
+  gap: 42px 34px;
+  align-items: end;
+}
+
+.book-spine-card {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  margin: 0;
+  padding-bottom: 18px;
+  text-align: center;
+}
+
+.book-spine-card::after {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  left: -10px;
+  height: 12px;
+  border-radius: 999px;
+  background: #d8b985;
+  box-shadow: 0 10px 18px rgba(16, 11, 43, 0.14);
+  content: "";
+}
+
+.book-cover {
+  position: relative;
+  z-index: 1;
+  width: 118px;
+  height: 172px;
+  border-radius: 4px 8px 8px 4px;
+  background:
+    linear-gradient(90deg, rgba(16, 11, 43, 0.28) 0 14px, transparent 14px),
+    linear-gradient(135deg, var(--book-color), #fff0c8);
+  box-shadow: 0 14px 26px rgba(16, 11, 43, 0.18);
+}
+
+.book-cover::before,
+.book-cover::after {
+  position: absolute;
+  right: 16px;
+  left: 28px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.62);
+  content: "";
+}
+
+.book-cover::before {
+  top: 52px;
+}
+
+.book-cover::after {
+  top: 66px;
+}
+
+.book-spine-card h3 {
+  margin: 14px 0 4px;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.book-spine-card p,
+.empty-bookshelf {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 0.94rem;
+  line-height: 1.35;
 }
 
 @media (max-width: 980px) {
