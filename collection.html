@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Collections | The Free Book Nook</title>
+    <title>Collection | The Free Book Nook</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -51,22 +51,16 @@
       </nav>
     </header>
 
-    <main class="collections-page">
-      <section class="collections-hero" aria-labelledby="collections-title">
-        <h1 id="collections-title">
-          <span class="page-user-name">TheFreeBookNook</span>
-        </h1>
+    <main class="collections-page collection-detail-page">
+      <section class="collections-hero collection-detail-hero">
+        <a class="back-link" href="collections.html">Back to collections</a>
+        <h1 data-collection-title title="Double-click to rename">Collection</h1>
+        <p class="collection-title-hint">Double-click to rename</p>
       </section>
 
-      <section class="collections-content" aria-labelledby="my-collections">
-        <h2 id="my-collections">My collections</h2>
-
-        <div class="collections-grid" data-collections-grid>
-          <button class="create-collection-card" type="button">
-            <span>Create new</span>
-            <strong aria-hidden="true">+</strong>
-          </button>
-        </div>
+      <section class="bookshelf-section" aria-labelledby="bookshelf-title">
+        <h2 id="bookshelf-title">Saved books</h2>
+        <div class="bookshelf" data-bookshelf></div>
       </section>
     </main>
 
@@ -87,7 +81,7 @@
         >
           &times;
         </button>
-        <h2 id="collection-modal-title">Create collection</h2>
+        <h2 id="collection-modal-title">Rename collection</h2>
         <form class="signin-form collection-form">
           <label for="collection-name">Collection name</label>
           <input
@@ -95,11 +89,14 @@
             name="collectionName"
             type="text"
             autocomplete="off"
-            placeholder="My favorite books"
             required
           />
-          <p class="signin-message collection-message" role="status" aria-live="polite"></p>
-          <button type="submit">Create collection</button>
+          <p
+            class="signin-message collection-message"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <button type="submit">Save name</button>
         </form>
       </div>
     </div>
