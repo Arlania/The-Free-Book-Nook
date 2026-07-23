@@ -20,6 +20,8 @@ const collectionModalTitle = document.querySelector("#collection-modal-title");
 const collectionSubmitButton = collectionForm?.querySelector('button[type="submit"]');
 const collectionTitle = document.querySelector("[data-collection-title]");
 const bookshelf = document.querySelector("[data-bookshelf]");
+const contactForm = document.querySelector(".contact-form");
+const contactFormMessage = document.querySelector(".contact-form-message");
 const demoAccount = {
   email: "TheFreeBookNook",
   password: "TheFreeBookNook",
@@ -421,6 +423,22 @@ document.querySelectorAll(".recent-search-delete").forEach((button) => {
   button.addEventListener("click", () => {
     button.closest(".recent-search-chip")?.remove();
   });
+});
+
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
+    return;
+  }
+
+  contactForm.reset();
+
+  if (contactFormMessage) {
+    contactFormMessage.textContent =
+      "Thank you! Your message is ready to be connected to our support inbox.";
+  }
 });
 
 updateUserState();
