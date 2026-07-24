@@ -97,6 +97,47 @@
         </div>
       </section>
     </main>
+
+    <div
+      class="modal-overlay save-book-modal"
+      id="save-book-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="save-book-title"
+    >
+      <div class="signin-modal">
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="Close add to collection"
+          data-save-book-close
+        >
+          &times;
+        </button>
+        <h2 id="save-book-title">Add to collection</h2>
+        <p class="save-book-name"></p>
+        <form class="save-book-form">
+          <label for="save-book-collection">Choose a collection</label>
+          <select id="save-book-collection" name="collectionId"></select>
+
+          <div class="new-collection-field" hidden>
+            <label for="save-book-new-collection">New collection name</label>
+            <input
+              id="save-book-new-collection"
+              name="newCollectionName"
+              type="text"
+              autocomplete="off"
+              placeholder="My favorite books"
+            />
+          </div>
+
+          <p class="save-book-message" role="status" aria-live="polite"></p>
+          <button type="submit">Add book</button>
+        </form>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

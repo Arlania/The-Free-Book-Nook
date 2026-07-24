@@ -105,6 +105,34 @@
       </div>
     </div>
 
+    <div
+      class="modal-overlay delete-collection-modal"
+      id="delete-collection-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="delete-collection-title"
+    >
+      <div class="signin-modal">
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="Close delete collection warning"
+          data-delete-collection-close
+        >
+          &times;
+        </button>
+        <h2 id="delete-collection-title">Delete collection?</h2>
+        <p class="delete-collection-warning"></p>
+        <div class="delete-collection-actions">
+          <button type="button" data-delete-collection-cancel>Cancel</button>
+          <button class="confirm-delete-collection" type="button">
+            Delete collection
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

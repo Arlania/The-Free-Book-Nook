@@ -27,6 +27,13 @@
 
     <main class="auth-page">
       <section class="auth-card" aria-labelledby="signup-title">
+        <div class="reading-required-notice" hidden>
+          <strong>Create a free account to start reading</strong>
+          <span>
+            You need to sign up or log in before opening books in The Free Book
+            Nook.
+          </span>
+        </div>
         <h1 id="signup-title">Create your account</h1>
         <p>
           Join The Free Book Nook to request books, build collections, and help
@@ -71,7 +78,13 @@
 
           <button type="submit">Create Account</button>
         </form>
+
+        <p class="auth-login-prompt">
+          Already have an account?
+          <a class="required-login-link" href="index.html#signin">Log in</a>
+        </p>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
