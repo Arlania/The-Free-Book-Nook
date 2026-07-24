@@ -41,69 +41,59 @@
               name="query"
               type="search"
               placeholder="Search..."
+              required
             />
             <button type="submit">Search</button>
           </div>
 
-          <fieldset class="search-filters">
-            <legend>Filter by</legend>
-            <label>
-              <input type="checkbox" name="format" value="novels" />
-              <span>Novels</span>
-            </label>
-            <label>
-              <input type="checkbox" name="format" value="manga" />
-              <span>Manga</span>
-            </label>
-            <label>
-              <input type="checkbox" name="format" value="cookbooks" />
-              <span>Cookbooks</span>
-            </label>
-            <label>
-              <input type="checkbox" name="format" value="academic" />
-              <span>Academic papers</span>
-            </label>
-          </fieldset>
         </form>
+
+        <section
+          class="search-results"
+          aria-labelledby="search-results-title"
+          aria-live="polite"
+          hidden
+        >
+          <div class="search-results-banner">
+            <p class="search-results-count"></p>
+            <h2 id="search-results-title">Search Results</h2>
+          </div>
+
+          <div class="search-result-tabs" role="group" aria-label="Search within">
+            <button
+              class="search-result-tab is-active"
+              type="button"
+              data-search-scope="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="search-result-tab"
+              type="button"
+              data-search-scope="title"
+              aria-pressed="false"
+            >
+              Title
+            </button>
+            <button
+              class="search-result-tab"
+              type="button"
+              data-search-scope="author"
+              aria-pressed="false"
+            >
+              Author
+            </button>
+          </div>
+
+          <p class="search-status"></p>
+          <div class="search-results-grid"></div>
+        </section>
 
         <div class="recent-searches" aria-labelledby="recent-searches-title">
           <h2 id="recent-searches-title">Recent Searches</h2>
-          <div class="recent-search-list">
-            <span class="recent-search-chip">
-              <button class="recent-search-term" type="button">
-                Pride and Prejudice
-              </button>
-              <button
-                class="recent-search-delete"
-                type="button"
-                aria-label="Delete Pride and Prejudice from recent searches"
-              >
-                &times;
-              </button>
-            </span>
-            <span class="recent-search-chip">
-              <button class="recent-search-term" type="button">Manga</button>
-              <button
-                class="recent-search-delete"
-                type="button"
-                aria-label="Delete Manga from recent searches"
-              >
-                &times;
-              </button>
-            </span>
-            <span class="recent-search-chip">
-              <button class="recent-search-term" type="button">
-                Climate research
-              </button>
-              <button
-                class="recent-search-delete"
-                type="button"
-                aria-label="Delete Climate research from recent searches"
-              >
-                &times;
-              </button>
-            </span>
-          </div>
+          <div class="recent-search-list"></div>
+          <p class="recent-searches-empty">No recent searches yet.</p>
         </div>
       </section>
     </main>
