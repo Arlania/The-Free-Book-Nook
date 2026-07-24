@@ -188,7 +188,9 @@ let deleteCollectionTrigger = null;
 
 function updateUserState() {
   const storedUser = localStorage.getItem("freeBookNookUser");
+  const storedName = localStorage.getItem("freeBookNookUserName");
   const loggedIn = Boolean(storedUser);
+  const displayName = storedName || storedUser;
 
   if (loginLink) {
     loginLink.hidden = loggedIn;
@@ -199,11 +201,11 @@ function updateUserState() {
   }
 
   if (loggedIn && userName) {
-    userName.textContent = storedUser;
+    userName.textContent = displayName;
   }
 
   if (pageUserName) {
-    pageUserName.textContent = loggedIn ? storedUser : "Guest";
+    pageUserName.textContent = loggedIn ? displayName : "Guest";
   }
 }
 
@@ -722,6 +724,7 @@ signupForm?.addEventListener("submit", (event) => {
 
 logoutButton?.addEventListener("click", () => {
   localStorage.removeItem("freeBookNookUser");
+  localStorage.removeItem("freeBookNookUserName");
   userMenu?.classList.remove("is-open");
   userButton?.setAttribute("aria-expanded", "false");
   updateUserState();

@@ -21,7 +21,28 @@
 
       <nav class="nav-right" aria-label="Account navigation">
         <a href="index.html#donate">Donate</a>
-        <a href="index.html#signin">Login</a>
+        <a href="index.html#signin" class="login-link">Login</a>
+        <div class="user-menu" hidden>
+          <button
+            class="user-button"
+            type="button"
+            aria-label="User account menu"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <span class="user-icon" aria-hidden="true"></span>
+            <span class="user-name">TheFreeBookNook</span>
+          </button>
+          <div class="account-dropdown" role="menu">
+            <a href="#starred" role="menuitem">Starred</a>
+            <a href="collections.html" role="menuitem">Collections</a>
+            <a href="#creator-access" role="menuitem">Creator Access</a>
+            <a href="contact.html" role="menuitem">Contact Us</a>
+            <button class="logout-button" type="button" role="menuitem">
+              Sign Out
+            </button>
+          </div>
+        </div>
       </nav>
     </header>
 
